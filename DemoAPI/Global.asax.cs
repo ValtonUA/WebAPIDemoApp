@@ -31,7 +31,8 @@ namespace DemoAPI
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
             var path = Server.MapPath("/test_log.txt");
-            builder.Register(c => new TextFileLogger(path)).As<ILogger>();
+            TextFileLogger.CreateInstance(path);
+            builder.RegisterInstance(TextFileLogger.GetInstance()).As<ILogger>();
             IContainer container = builder.Build();
 
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);

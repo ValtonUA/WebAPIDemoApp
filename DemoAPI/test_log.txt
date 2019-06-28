@@ -4,3 +4,6 @@ Get request with id: '1'
 GetAll request
 Get request with id: '4'
 Get request with id: '2'
+Get request with id: '1'
+Get request with id: '10'
+GetAll request
